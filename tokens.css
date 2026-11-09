@@ -1,0 +1,9 @@
+/* Korslund: farger og skrift (forside v3). Skriftene er selvhostet i fonter/ (SIL Open Font License). */
+@font-face{font-family:'Gabarito';src:url(fonter/gabarito-latin.woff2) format('woff2');font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Xanh Mono';src:url(fonter/xanhmono-latin.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Xanh Mono';src:url(fonter/xanhmono-kursiv-latin.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}
+:root{
+--paper:#EEECE6;--sheet:#FBFAF6;--petrol:#194052;--petrol-2:#21506A;--ink:#0F2731;--blekk:#12191C;--muted:#4A5A60;--muted-on-dark:#A9C3C8;--line:#B9BDB8;--accent:#EE6A3C;
+--ease:cubic-bezier(.32,.72,0,1);
+interpolate-size:allow-keywords;
+}

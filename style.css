@@ -1,0 +1,205 @@
+/* Korslund forside v3. Samme stil som forsiden på lerretet. */
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--paper)}
+.k{font-family:'Gabarito',system-ui,sans-serif;color:var(--ink);background:var(--paper);width:100%;overflow-x:clip;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.k *{box-sizing:border-box}
+.k a{color:inherit}
+.k-wrap{max-width:1360px;margin:0 auto;padding:0 48px}
+.k-mono{font-family:'Xanh Mono',ui-monospace,monospace;font-weight:400}
+.hopp{position:absolute;left:16px;top:-80px;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:30;text-decoration:none}
+.hopp:focus{top:12px}
+.k a:focus-visible,.k button:focus-visible,.k summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.k-dark a:focus-visible,.k-dark summary:focus-visible{outline-color:var(--paper)}
+.k-strong a:focus-visible{outline-color:var(--ink)}
+
+/* Fast hode: bunnfarge og hårlinje kommer når siden rulles */
+.k-head{position:sticky;top:0;z-index:20;background:var(--paper);box-shadow:0 1px 0 rgba(15,39,49,.16)}
+@supports (animation-timeline: scroll()){
+.k-head{animation:k-head both linear;animation-timeline:scroll(root);animation-range:0 120px}
+@keyframes k-head{from{background-color:rgba(238,236,230,0);box-shadow:0 1px 0 rgba(15,39,49,0)}to{background-color:rgba(238,236,230,1);box-shadow:0 1px 0 rgba(15,39,49,.16)}}
+}
+.k-head-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.k-logo{display:flex;flex-direction:column;text-decoration:none;line-height:1}
+.k-logo b{font-weight:900;font-size:28px;letter-spacing:-0.035em;color:var(--petrol)}
+.k-logo span{font-size:14px;margin-top:3px;color:var(--muted)}
+.k-nav{display:flex;align-items:center;gap:36px;font-size:16px;font-weight:500}
+.k-nav a{text-decoration:none;position:relative;padding:6px 0}
+.k-nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 380ms var(--ease)}
+.k-nav a:hover::after,.k-nav a:focus-visible::after{transform:scaleX(1)}
+.k-btn{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 22px;background:var(--petrol);color:var(--paper) !important;text-decoration:none;font-weight:700;font-size:16px;white-space:nowrap;transition:transform 110ms var(--ease),background-color 220ms var(--ease)}
+.k-btn:hover{background:var(--ink)}
+.k-btn:active{transform:scale(.97)}
+
+/* Illustrasjoner: blekk og aksent styres per flate */
+.k{--blekk:#12191C;--aksent:#EE6A3C}
+.k-strong{--blekk:#0F2731;--aksent:#194052}
+.k-dark,.k-foot{--blekk:#EEECE6;--aksent:#EE6A3C}
+.k-illu{position:relative;width:100%;color:var(--blekk)}
+.k-illu svg{display:block;width:100%;height:auto}
+.k-illu > span{position:absolute;left:14px;bottom:12px;font-family:'Xanh Mono',ui-monospace,monospace;font-size:14px;opacity:.75}
+.k-illu:has(> span){border:1.5px dashed currentColor;opacity:.55}
+.k-kyst{margin-top:80px}
+
+/* Pil som eneste ikon */
+.k-arrow{flex:0 0 auto;width:20px;height:20px;transition:transform 380ms var(--ease)}
+
+/* Helt */
+.k-hero{padding:48px 0 0}
+.k-hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:end}
+.k-lede{margin:0 0 22px;font-size:24px;line-height:1.3;max-width:34ch}
+.k-h1{margin:0;font-weight:800;font-size:clamp(3rem,5.5vw,5.4rem);line-height:.94;letter-spacing:-0.045em;color:var(--petrol);max-width:15ch}
+.k-sub{margin:0;font-size:20px;line-height:1.5;max-width:40ch}
+.k-hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;margin-top:28px}
+.k-tlink{font-weight:700;font-size:20px;text-decoration:none;background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;background-position:0 100%;background-size:100% 3px;padding-bottom:3px;transition:background-size 380ms var(--ease)}
+.k-tlink:hover{background-size:100% 8px}
+.k-hero-art{margin-top:40px}
+.k-cap{margin:4px 0 0;padding-bottom:40px;font-size:16px;color:var(--muted);text-align:right}
+
+/* Stikktittel (kursiv) på mørke og sterke flater */
+.k-kick{margin:0 0 18px;font-family:'Xanh Mono',ui-monospace,monospace;font-style:italic;font-size:22px;line-height:1.2}
+.k-h2{margin:0;font-weight:800;font-size:clamp(2.5rem,5.4vw,5.2rem);line-height:.95;letter-spacing:-0.04em}
+.k-ingress{margin:0 0 26px;font-family:'Xanh Mono',ui-monospace,monospace;font-size:clamp(1.3rem,1.9vw,1.75rem);line-height:1.3;max-width:34ch}
+
+/* Flater i takt */
+.k-strong{background:var(--accent);color:var(--ink)}
+.k-dark{background:var(--petrol);color:var(--paper)}
+.k-sec{padding:128px 0}
+
+/* Plassholdere fra teksten står synlig */
+.k-ph{font-family:'Xanh Mono',ui-monospace,monospace;font-weight:400;background:color-mix(in srgb,var(--aksent) 22%,transparent);padding:0 .2em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.k-dark .k-ph{background:rgba(238,236,230,.16)}
+.k-strong .k-ph{background:rgba(15,39,49,.12)}
+.k-note{margin:28px 0 0;font-size:16px;line-height:1.5;max-width:62ch}
+
+/* Delt hode i seksjonene: tekst + illustrasjon */
+.k-split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:end;margin-bottom:64px}
+.k-split .k-illu{max-width:440px;margin-left:auto}
+
+/* Tjenester: nummererte hårlinjerader med pil */
+.k-rows{list-style:none;margin:0;padding:0;border-top:1px solid rgba(238,236,230,.4)}
+.k-rows a{position:relative;display:grid;grid-template-columns:64px minmax(0,4fr) minmax(0,6fr) 24px;gap:24px;align-items:baseline;padding:26px 0;text-decoration:none;border-bottom:1px solid rgba(238,236,230,.4)}
+.k-rows a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 420ms var(--ease)}
+.k-rows a:hover::after,.k-rows a:focus-visible::after{transform:scaleX(1)}
+.k-rows .k-n{font-family:'Xanh Mono',ui-monospace,monospace;font-size:18px;color:var(--muted-on-dark)}
+.k-rows b{font-weight:700;font-size:clamp(1.3rem,1.9vw,1.7rem);letter-spacing:-0.015em;line-height:1.15}
+.k-rows span.k-d{font-size:17px;line-height:1.5;color:#DCE5E6;max-width:52ch}
+.k-rows .k-arrow{color:var(--accent);align-self:center}
+.k-rows a:hover .k-arrow,.k-rows a:focus-visible .k-arrow{transform:translate(3px,-3px)}
+
+/* Slik priser vi: nummerert trekkspill */
+.k-acc{border-top:2px solid var(--ink)}
+.k-acc details{border-bottom:1px solid var(--line)}
+.k-acc summary{list-style:none;display:grid;grid-template-columns:56px minmax(0,1fr) 28px;align-items:center;gap:16px;padding:24px 0;cursor:pointer;font-size:clamp(1.3rem,1.9vw,1.7rem);font-weight:700;letter-spacing:-0.015em}
+.k-acc summary::-webkit-details-marker{display:none}
+.k-acc .k-n{font-family:'Xanh Mono',ui-monospace,monospace;font-weight:400;font-size:18px;color:var(--muted)}
+.k-pm{position:relative;width:20px;height:20px;justify-self:end}
+.k-pm::before,.k-pm::after{content:"";position:absolute;left:0;top:9px;width:20px;height:2px;background:currentColor;transition:transform 420ms var(--ease)}
+.k-pm::after{transform:rotate(90deg)}
+.k-acc details[open] .k-pm::after{transform:rotate(0deg)}
+.k-acc summary:hover .k-pm{color:var(--accent)}
+.k-acc details::details-content{block-size:0;overflow:hidden;transition:block-size 420ms var(--ease),content-visibility 420ms allow-discrete}
+.k-acc details[open]::details-content{block-size:auto}
+.k-acc .k-ans{margin:0;padding:0 44px 28px 72px;font-size:18px;line-height:1.6;max-width:62ch}
+.k-price-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+.k-price-grid .k-illu{max-width:420px;margin-top:48px}
+
+/* For familieeide på sterk flate */
+.k-fam-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center}
+.k-fam-grid p.k-p{margin:28px 0 0;font-size:19px;line-height:1.6;max-width:52ch}
+.k-ilink{display:inline-block;margin-top:28px;font-weight:700;font-size:20px;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:7px;transition:text-underline-offset 300ms var(--ease)}
+.k-ilink:hover{text-underline-offset:11px}
+
+/* Folk som tabell */
+.k-table{width:100%;border-collapse:collapse;font-size:17px}
+.k-table th{text-align:left;font-family:'Xanh Mono',ui-monospace,monospace;font-weight:400;font-size:16px;color:var(--muted);padding:0 20px 14px 0;border-bottom:2px solid var(--ink)}
+.k-table td{padding:22px 20px 22px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.5}
+.k-table td:first-child{font-weight:800;font-size:22px;letter-spacing:-0.02em;color:var(--petrol);white-space:nowrap;line-height:1.2}
+.k-table td:nth-child(3){max-width:46ch}
+.k-table .k-m{font-family:'Xanh Mono',ui-monospace,monospace;font-size:17px}
+.k-table a{text-decoration:none;background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px;padding-bottom:2px;white-space:nowrap}
+.k-table .k-li{display:block;margin-top:8px;font-family:'Xanh Mono',ui-monospace,monospace;font-weight:400;font-size:16px;letter-spacing:0;color:var(--ink)}
+
+/* Kontakt som egen flate */
+.k-call-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:end}
+.k-call-art .k-illu{max-width:360px;margin-left:auto}
+.k-people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-top:64px;border-top:2px solid var(--ink)}
+.k-people > div{padding-top:22px}
+.k-people p{margin:0;font-size:18px}
+.k-phone{display:inline-block;margin:8px 0 6px;font-weight:800;font-size:clamp(2.4rem,4.6vw,4.4rem);letter-spacing:-0.035em;line-height:1;text-decoration:none}
+.k-phone:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px}
+.k-mail{font-family:'Xanh Mono',ui-monospace,monospace;font-size:19px;text-decoration:underline;text-underline-offset:4px}
+.k-people .k-btn{margin-top:20px}
+
+/* Bunntekst som merkevaremøte */
+.k-foot{background:var(--petrol);color:var(--paper);padding-top:96px;overflow:hidden}
+.k-foot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.k-foot h3{margin:0 0 16px;font-family:'Xanh Mono',ui-monospace,monospace;font-style:italic;font-weight:400;font-size:19px;color:var(--muted-on-dark)}
+.k-foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:16px}
+.k-foot p{margin:0;font-size:16px;line-height:1.55}
+.k-foot a{text-decoration:none}
+.k-foot a:hover{text-decoration:underline;text-underline-offset:4px}
+.k-foot .k-water{margin:56px 0 0;font-weight:900;font-size:clamp(4.5rem,16.5vw,16rem);line-height:.74;letter-spacing:-0.05em;color:var(--petrol-2);white-space:nowrap;user-select:none}
+.k-legal{background:var(--ink);color:var(--muted-on-dark);font-size:14px;padding:18px 0}
+.k-legal .k-wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 32px}
+.k-legal p{margin:0}
+
+/* Ring oss: telefon på mobil, kontaktflaten på PC */
+.k-only-m{display:none !important}
+
+@media (prefers-reduced-motion: reduce){
+html{scroll-behavior:auto}
+.k-head{animation:none !important;background:var(--paper);box-shadow:0 1px 0 rgba(15,39,49,.16)}
+.k *{transition-duration:1ms !important}
+.k-acc details::details-content{transition:none}
+.k-rows a:hover .k-arrow{transform:none}
+.k-btn:active{transform:none}
+}
+@media (max-width:1100px){
+.k-nav{gap:22px}
+.k-foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:767px){
+.k{font-size:17px}
+.k-wrap{padding:0 20px}
+.k-nav{display:none}
+.k-only-m{display:inline-flex !important}
+.k-only-d{display:none !important}
+.k-head-in{height:64px}
+.k-logo b{font-size:24px}
+.k-btn{height:42px;padding:0 16px;font-size:15px}
+.k-hero{padding-top:32px}
+.k-hero-grid,.k-split,.k-price-grid,.k-fam-grid,.k-call-grid{grid-template-columns:minmax(0,1fr);gap:36px}
+.k-lede{font-size:21px}
+.k-h1{font-size:3rem}
+.k-sub{font-size:18px}
+.k-hero-art{margin:32px -20px 0}
+.k-cap{padding:0 20px 28px;text-align:left}
+.k-sec{padding:88px 0}
+.k-split{margin-bottom:40px}
+.k-split .k-illu{margin:0;max-width:320px}
+.k-rows a{grid-template-columns:40px minmax(0,1fr) 22px;gap:6px 10px;padding:20px 0}
+.k-rows span.k-d{grid-column:2 / 3;grid-row:2}
+.k-rows .k-arrow{grid-column:3;grid-row:1}
+.k-price-grid .k-illu{max-width:300px;margin-top:32px}
+.k-fam-grid .k-illu{max-width:320px}
+.k-acc summary{grid-template-columns:40px minmax(0,1fr) 24px;gap:10px}
+.k-acc .k-ans{padding:0 0 24px 50px}
+.k-table thead{display:none}
+.k-table,.k-table tbody,.k-table tr,.k-table td{display:block;width:100%}
+.k-table tr{padding:20px 0;border-bottom:1px solid var(--line)}
+.k-table tr:first-child{border-top:2px solid var(--ink)}
+.k-table td{border:0;padding:3px 0}
+.k-table td:first-child{white-space:normal;margin-bottom:6px}
+.k-people{grid-template-columns:minmax(0,1fr);gap:0}
+.k-people > div + div{margin-top:28px;border-top:1px solid rgba(15,39,49,.4)}
+.k-call-art .k-illu{margin:0;max-width:260px}
+.k-foot{padding-top:72px}
+.k-foot-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+.k-kyst{margin-top:56px}
+.k-foot .k-water{margin-top:48px}
+}
+
+/* Demo: plass til demobåndet nederst, og personvernsiden */
+.k-legal{padding-bottom:44px}
+.k-tekstside{padding-top:96px;padding-bottom:128px}
+.k-tekstside p{max-width:62ch;font-size:19px;line-height:1.6}
